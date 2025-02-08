@@ -1,0 +1,62 @@
+
+
+Funcionalidades do Programa
+
+1.Cálculo de Áreas e Perímetros:
+
+O programa calcula áreas e perímetros para 11 formas geométricas diferentes.
+
+2.Restrições de Valores:
+
+Aceita apenas valores reais positivos.
+Aceita o valor 0 somente em cálculos que exigem pares ordenados.
+Não aceita números negativos em nenhum caso.
+
+3.Cálculo de Distâncias:
+
+Calcula a distância de um ponto à origem.
+Calcula a distância entre dois pontos quaisquer.
+
+4.Proximidade de Pontos em Relação a uma Reta:
+
+Cria uma reta através de dois pontos dados.
+Verifica se um terceiro ponto está próximo ou longe dessa reta.
+Define que um ponto está próximo se estiver a uma distância de até 1.10^-9 da reta.
+
+5.Verificação de Ponto Dentro de uma Forma Geométrica:
+
+Determina se um ponto qualquer está dentro ou fora de uma forma geométrica.
+Considera o ponto dentro se ele compreende até a borda limite da figura.
+
+6.Condições de Validação e Erros:
+
+Valores que geram área igual a 0 são tratados como inválidos.
+Valores negativos e casos onde zero causa a inexistência da forma são considerados inválidos.
+A não conformidade com as condições de existência da forma também resulta em valor inválido.
+Erros são gerados se a instrução e a ordem dos inputs não forem seguidas.
+
+7.Encerramento do Programa:
+
+O programa pode ser encerrado pelo usuário usando a opção 0 no painel.
+
+8.Casos Específicos de Triângulo e Paralelogramo:
+
+Para o Triângulo: Exemplo de pontos válidos para formar um triângulo retângulo pitagórico (3, 4, 5).
+Triangulo: 0 0 3 0 3 4 - Forma o triangulo retangulo pitagorico o famoso triangulo 3 4 5 que tem área conhecida e igual a 6 com perímetro igual a 12
+
+Para o Paralelogramo: Exemplo de pontos válidos que formam um paralelogramo com inclinação específica no plano cartesiano.
+Paralelogramo: 0 0 4 0 3 3 7 3 - forma um paralelogramo com inclinacao se movimentando 3 casas pro lado direito do eixo X no plano cartesiano quando esta em y = 3
+
+9.Entrada de Dados:
+
+Os inputs devem ser dados com separações entre os dados, apenas entradas separadas por espaços não acarretarão em erros de entrada inválida pelo sistema!
+
+10.Validações Específicas:
+
+Caso do Trapézio, Elipse e Losango: O programa verifica se o lado menor não recebe valores maiores que o lado maior para evitar erros de validação.
+Para o Trapézio: Se os lados menor e maior forem iguais, o programa considera um erro, pois isso transformaria o trapézio em um retângulo ou quadrado.
+
+11.Arquivos e Testes:
+
+A pasta isolada contém o código completo, incluindo o testebench, que serve como um arquivo de rascunho.
+Todas as funcionalidades e requisitos do projeto original(projeto 1) foram mantidos, com otimizações, adições ou remoções de funcionalidades conforme necessário.

@@ -1,0 +1,83 @@
+projeto/
+├── main.py
+├── package/
+│   ├── __init__.py
+│   ├── formas/
+│   │   ├── __init__.py
+│   │   ├── forma_geometrica.py
+│   │   ├── ponto.py
+│   │   ├── segmento_de_reta.py
+│   │   ├── circulo.py
+│   │   ├── retangulo.py
+│   │   ├── triangulo.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── calculos.py
+└── tests/
+    ├── testbench_01.py
+    ├── testbench_02.py
+    ├── testbench_03.py
+    ├── ...
+
+
+IR PARA O DIRETORIO ONDE VAI FICAR O 'PROJETO'
+
+mkdir projeto
+cd projeto
+dentro da pasta 'projeto'
+touch main.py
+mkdir package
+cd package
+touch __init__.py
+mkdir formas
+mkdir utils
+cd formas
+touch __init__.py forma_geometrica.py ponto.py segmento_de_reta.py circulo.py retangulo.py triangulo.py
+cd ../utils
+touch __init__.py calculos.py
+cd ../../
+mkdir tests
+cd tests
+touch testbench_01.py testbench_02.py testbench_03.py
+
+
+Exemplos de Implementação
+Para começar, você pode preencher os arquivos com código básico. Aqui estão alguns exemplos:
+
+package/formas/forma_geometrica.py:
+
+class FormaGeometrica:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def calcular_area(self):
+        raise NotImplementedError("Este método deve ser sobrescrito nas subclasses.")
+
+
+package/formas/ponto.py:
+
+from .forma_geometrica import FormaGeometrica
+
+class Ponto(FormaGeometrica):
+    def __init__(self, x, y):
+        super().__init__('Ponto')
+        self.x = x
+        self.y = y
+
+    def calcular_distancia(self, outro_ponto):
+        return ((self.x - outro_ponto.x)**2 + (self.y - outro_ponto.y)**2)**0.5
+
+
+tests/testbench_01.py:
+
+import unittest
+from package.formas.ponto import Ponto
+
+class TestPonto(unittest.TestCase):
+    def test_calcular_distancia(self):
+        ponto1 = Ponto(0, 0)
+        ponto2 = Ponto(3, 4)
+        self.assertAlmostEqual(ponto1.calcular_distancia(ponto2), 5.0)
+
+if __name__ == "__main__":
+    unittest.main()

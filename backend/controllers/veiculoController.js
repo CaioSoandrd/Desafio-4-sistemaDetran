@@ -7,7 +7,7 @@ exports.createVeiculo = (req, res) => {
 
     // validação: verifica se todos os campos obrigatórios foram preenchidos
     if (!placa || !modelo || !cor || !motorista_id) {
-        return res.status(400).json({ erro: "Todos os campos são obrigatórios" });
+        return res.status(400).json({ erro: "todos os campos são obrigatórios" });
     }
 
     // cria o objeto com os dados do veículo
@@ -17,11 +17,11 @@ exports.createVeiculo = (req, res) => {
     Veiculo.create(novoVeiculo, (err, result) => {
         if (err) {
             // Em caso de erro interno
-            return res.status(500).json({ erro: "Erro ao cadastrar veículo" });
+            return res.status(500).json({ erro: "erro ao cadastrar veículo" });
         }
         // se inserido com sucesso retorna status 201
         res.status(201).json({
-            mensagem: "Veículo cadastrado com sucesso",
+            mensagem: "veículo cadastrado com sucesso",
             id: result.insertId,
             veiculo: novoVeiculo
         });
@@ -33,7 +33,7 @@ exports.getAllVeiculos = (req, res) => {
     // chama a função getAll do modelo
     Veiculo.getAll((err, results) => {
         if (err) {
-            return res.status(500).json({ erro: "Erro ao buscar veículos" });
+            return res.status(500).json({ erro: "erro ao buscar veículos" });
         }
         // retorna a lista de veículos
         res.status(200).json(results);
@@ -48,11 +48,11 @@ exports.getVeiculoById = (req, res) => {
     // chama a função getById do modelo, que executa um SELECT filtrando pelo ID
     Veiculo.getById(id, (err, results) => {
         if (err) {
-            return res.status(500).json({ erro: "Erro ao buscar veículo" });
+            return res.status(500).json({ erro: "erro ao buscar veículo" });
         }
         // se nenhum veículo for encontrado, retorna status 404
         if (results.length === 0) {
-            return res.status(404).json({ erro: "Veículo não encontrado" });
+            return res.status(404).json({ erro: "veículo não encontrado" });
         }
         // retorna o veículo encontrado
         res.status(200).json(results[0]);
@@ -63,7 +63,13 @@ exports.getVeiculosByMotorista = (req, res) =>{
     // extrai o id_motorista dos parametros URL
     const {motorista_id} =req.params;
     //chama função do modelo para buscar veiculos filtrados pelo motorista_id
-    Veiculo.getByMotorista()
+    Veiculo.getByMotorista(motorista_id, (err, results) =>{
+        if (err){
+            return res.status(500).json({erro: "erro ao buscar veiculos do motorista"});
+        }
+        //retorna os veiculos encontrados
+        res.status(200).json(results);
+    });
 
 }
 

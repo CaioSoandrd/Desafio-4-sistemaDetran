@@ -36,3 +36,12 @@ exports.getMultaById = (req, res) => {
     });
 };
 
+// Função para obter todas as multas
+exports.getAllMultas = (req, res) => {
+    Multa.getAll((err, results) => {
+        if (err) {
+            return res.status(500).json({ erro: "Erro ao buscar multas" });
+        }
+        res.status(200).json(results);
+    });
+};

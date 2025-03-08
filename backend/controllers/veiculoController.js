@@ -27,3 +27,15 @@ exports.createVeiculo = (req, res) => {
         });
     });
 };
+
+// função para obter todos os veículos
+exports.getAllVeiculos = (req, res) => {
+    // chama a função getAll do modelo
+    Veiculo.getAll((err, results) => {
+        if (err) {
+            return res.status(500).json({ erro: "Erro ao buscar veículos" });
+        }
+        // retorna a lista de veículos
+        res.status(200).json(results);
+    });
+};

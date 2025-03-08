@@ -59,17 +59,25 @@ exports.getVeiculoById = (req, res) => {
     });
 };
 //função para buscar veiculos por motorista especifico
-exports.getVeiculosByMotorista = (req, res) =>{
-    // extrai o id_motorista dos parametros URL
-    const {motorista_id} =req.params;
-    //chama função do modelo para buscar veiculos filtrados pelo motorista_id
-    Veiculo.getByMotorista(motorista_id, (err, results) =>{
-        if (err){
-            return res.status(500).json({erro: "erro ao buscar veiculos do motorista"});
+eexports.getVeiculosByMotorista = (req, res) => {
+    const { motorista_id } = req.params;
+    Veiculo.getByMotorista(motorista_id, (err, results) => {
+        if (err) {
+            return res.status(500).json({ erro: "erro ao buscar veiculos do motorista" });
         }
-        //retorna os veiculos encontrados
         res.status(200).json(results);
     });
+};
 
-}
+// função para deletar um veículo pelo ID
+exports.deleteVeiculoById = (req, res) => {
+    const { id } = req.params;
+    Veiculo.deleteById(id, (err, result) => {
+        if (err) {
+            return res.status(500).json({ erro: "erro ao deletar veiculo" });
+        }
+
+        res.status(200).json({ mensagem: "veículo deletado com sucesso" });
+    });
+};
 

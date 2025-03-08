@@ -22,3 +22,17 @@ exports.createMulta = (req, res) => {
     });
 
 }
+// função de buscar multas pelo ID
+exports.getMultaById = (req, res) => {
+    const { id } = req.params;
+    Multa.getById(id, (err, results) => {
+        if (err) {
+            return res.status(500).json({ erro: "Erro ao buscar multa" });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ erro: "Multa não encontrada" });
+        }
+        res.status(200).json(results[0]);
+    });
+};
+

@@ -1,4 +1,4 @@
-const Multa =require('.../models/multaModel');
+const Multa =require('../models/multaModelo');
 
 exports.createMulta = (req, res) => {
     const {data, valor, descricao, pontos, motorista_id} =req.body;

@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// Importando as rotas individuais
+const motoristasRoutes = require('.motoristas');
+const veiculosRoutes = require('./veiculos');
+const multasRoutes = require('./multas');
+
+//Definindo as rotas principais
+router.use('./motoristas', motoristasRoutes);
+router.use('./veiculos', veiculosRoutes);
+router.use('./multas', multasRoutes);
 
 module.exports = router;

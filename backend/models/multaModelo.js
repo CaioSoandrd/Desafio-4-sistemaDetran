@@ -2,24 +2,24 @@ const db = require('../config/mysql'); // Conexão com o banco de dados
 
 const Multa = {
     create: (multa, callback) => {
-        const { data, valor, descricao, pontos, motorista_id } = multa;
-        const query = 'INSERT INTO multas (data, valor, descricao, pontos, motorista_id) VALUES (?, ?, ?, ?, ?)';
-        db.query(query, [data, valor, descricao, pontos, motorista_id], callback);
+        const { velocidade_identificada, data_hora, placa_veiculo } = multa;
+        const query = 'INSERT INTO Multa (velocidade_identificada, data_hora, placa_veiculo) VALUES (?, ?, ?)';
+        db.query(query, [velocidade_identificada, data_hora, placa_veiculo], callback);
     },
 
     getAll: (callback) => {
-        const query = 'SELECT * FROM multas';
+        const query = 'SELECT * FROM Multa';
         db.query(query, callback);
     },
 
     getById: (id, callback) => {
-        const query = 'SELECT * FROM multas WHERE id = ?';
+        const query = 'SELECT * FROM Multa WHERE idInfracao = ?';
         db.query(query, [id], callback);
     },
 
-    getByMotorista: (motorista_id, callback) => {
-        const query = 'SELECT * FROM multas WHERE motorista_id = ?';
-        db.query(query, [motorista_id], callback);
+    getByVeiculo: (placa_veiculo, callback) => {
+        const query = 'SELECT * FROM Multa WHERE placa_veiculo = ?';
+        db.query(query, [placa_veiculo], callback);
     }
 };
 

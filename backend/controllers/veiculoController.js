@@ -1,4 +1,5 @@
-const Veiculo =require('../models/veiculoModel');
+const Veiculo = require('../models/veiculoModel');
+
 
 // Função para cadastrar um novo veículo
 exports.createVeiculo = (req, res) => {
@@ -59,7 +60,10 @@ exports.getVeiculoById = (req, res) => {
     });
 };
 //função para buscar veiculos por motorista especifico
-eexports.getVeiculosByMotorista = (req, res) => {
+
+
+exports.getVeiculosByMotorista = (req, res) => {
+
     const { motorista_id } = req.params;
     Veiculo.getByMotorista(motorista_id, (err, results) => {
         if (err) {

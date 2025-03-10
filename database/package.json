@@ -1,0 +1,16 @@
+{
+  "name": "sql-database-project",
+  "version": "1.0.0",
+  "description": "A project to manage traffic fines, vehicles, and owners using a SQL database.",
+  "main": "index.js",
+  "scripts": {
+    "create-tables": "mysql -u username -p < sql/create_tables.sql",
+    "insert-data": "mysql -u username -p < sql/insert_data.sql",
+    "run-queries": "mysql -u username -p < sql/queries.sql"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}

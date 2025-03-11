@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "13ae6cb3-9461-4a38-9cf1-7c6f4ac5b5c3",
+		"name": "Detran API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42993370"
+	},
+	"item": [
+		{
+			"name": "Motoristas",
+			"item": [
+				{
+					"name": "Criar Motoristas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Maria Oliveira\",\r\n  \"cpf\": \"987.654.321-00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/motoristas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"motoristas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Motoristas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/motoristas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"motoristas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veiculos",
+			"item": [
+				{
+					"name": "Criar Veiculo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"placa\": \"ABC-1234\",\r\n  \"modelo\": \"Fusca\",\r\n  \"cor\": \"Azul\",\r\n  \"motorista_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/veiculos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Veiculos por Motorista",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/veiculos/motorista/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"veiculos",
+								"motorista",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Multas",
+			"item": [
+				{
+					"name": "Criar Multa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": \"2023-10-01\",\r\n  \"valor\": 150.00,\r\n  \"descricao\": \"Excesso de velocidade\",\r\n  \"pontos\": 5,\r\n  \"motorista_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/multas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"multas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Multas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/multas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"multas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

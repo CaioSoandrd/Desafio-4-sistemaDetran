@@ -16,7 +16,7 @@ const ConsultaVeiculo = () => {
     try {
       setErro(""); 
 
-      const resposta = await fetch(`http://localhost:5000/veiculos/${placa}`);
+      const resposta = await fetch(`http://localhost:5001/veiculos/${placa}`);
       if (!resposta.ok) {
         throw new Error("Veículo não encontrado");
       }

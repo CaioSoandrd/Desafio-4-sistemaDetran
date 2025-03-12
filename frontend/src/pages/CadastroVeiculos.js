@@ -16,6 +16,7 @@ const CadastroVeiculos = () => {
 
         <form>
           <input type="text" placeholder="Placa" />
+<<<<<<< HEAD
           <input type="text" placeholder="Renavam" />
           <input type="text" placeholder="Ano de fabricação" />
           <input type="text" placeholder="Cor" />
@@ -24,6 +25,11 @@ const CadastroVeiculos = () => {
           <input type="text" placeholder="Status" />
           <input type="text" placeholder="CPF do propietário" />
           <input type="text" placeholder="Chassi"/>
+=======
+          <input type="text" placeholder="Cor" />
+          <input type="text" placeholder="Modelo" />
+
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
         </form>
       </div>
     </div>

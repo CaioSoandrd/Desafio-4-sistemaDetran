@@ -53,6 +53,7 @@ const ConsultaMulta = () => {
 
         {multa && (
           <div className="resultado">
+<<<<<<< HEAD
             <p><strong>ID Infração:</strong> {multa.idInfracao}</p>
             <p><strong>Velocidade Identificada:</strong> {multa.velocidade_identificada} km/h</p>
             <p><strong>Data e Hora:</strong> {multa.data_hora}</p>
@@ -60,6 +61,12 @@ const ConsultaMulta = () => {
             <p><strong>Matrícula do Agente:</strong> {multa.matricula_agente}</p>
             <p><strong>Local da Infração:</strong> {multa.idLugar_lugar}</p>
             <p><strong>Tipo de Infração:</strong> {multa.idTipo_tipo_infracao}</p>
+=======
+            <p><strong>Data:</strong> {multa.data}</p>
+            <p><strong>Valor:</strong> {multa.valor}</p>
+            <p><strong>Descrição:</strong> {multa.descricao}</p>
+            <p><strong>Pontos:</strong> {multa.pontos}</p>
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
           </div>
         )}
       </div>

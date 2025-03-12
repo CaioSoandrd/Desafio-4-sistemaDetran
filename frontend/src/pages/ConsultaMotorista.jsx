@@ -54,11 +54,17 @@ const ConsultaMotorista = () => {
 
         {motorista && (
           <div className="resultado">
+<<<<<<< HEAD
             <p><strong>Nome:</strong> {motorista.proprietario_nome}</p>
             <p><strong>Data de Nascimento:</strong> {motorista.data_nascimento}</p>
             <p><strong>Sexo:</strong> {motorista.sexo}</p>
             <p><strong>CEP:</strong> {motorista.cep_endereco}</p>
             <p><strong>Telefone:</strong> {motorista.num_telefone_telefone}</p>
+=======
+            <p><strong>Nome:</strong> {motorista.nome}</p>
+            <p><strong>CPF:</strong> {motorista.cpf}</p>
+            <p><strong>Pontos:</strong> {motorista.pontos}</p>
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
           </div>
         )}
       </div>

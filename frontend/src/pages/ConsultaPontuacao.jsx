@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "./ConsultaMotorista.css"; 
 import logo from "../assets/logo.png";
 
+<<<<<<< HEAD
 const ConsultaMotorista = () => {
+=======
+const ConsultaPontuacao = () => {
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
   const [cpf, setCpf] = useState("");
   const [motorista, setMotorista] = useState(null);
   const [erro, setErro] = useState(""); 
@@ -16,9 +20,17 @@ const ConsultaMotorista = () => {
     try {
       setErro(""); 
 
+<<<<<<< HEAD
       const resposta = await fetch(`http://localhost:5001/motoristas/${cpf}`);
       if (!resposta.ok) {
         throw new Error("Motorista não encontrado");
+=======
+
+      const resposta = await fetch(`http://localhost:5000/motoristas/pontuacao/${cpf}`);
+
+      if (!resposta.ok) {
+        throw new Error("Motorista não encontrado ou com menos de 10 pontos");
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
       }
       const dados = await resposta.json();
 
@@ -54,11 +66,17 @@ const ConsultaMotorista = () => {
 
         {motorista && (
           <div className="resultado">
+<<<<<<< HEAD
             <p><strong>Nome:</strong> {motorista.proprietario_nome}</p>
             <p><strong>Data de Nascimento:</strong> {motorista.data_nascimento}</p>
             <p><strong>Sexo:</strong> {motorista.sexo}</p>
             <p><strong>CEP:</strong> {motorista.cep_endereco}</p>
             <p><strong>Telefone:</strong> {motorista.num_telefone_telefone}</p>
+=======
+            <p><strong>Nome:</strong> {motorista.nome}</p>
+            <p><strong>CPF:</strong> {motorista.cpf}</p>
+            <p><strong>Pontuação:</strong> {motorista.pontos}</p>
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
           </div>
         )}
       </div>
@@ -66,4 +84,8 @@ const ConsultaMotorista = () => {
   );
 };
 
+<<<<<<< HEAD
 export default ConsultaMotorista;
+=======
+export default ConsultaPontuacao;
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)

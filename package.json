@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "react-router-dom": "^7.3.0"
+  },
+  "name": "desafio-4-sistemadetran",
+  "version": "1.0.0",
+  "description": "Esta API foi desenvolvida como parte da solução do desafio final do processo trainee da EngNet. Ela foi construída utilizando Node.js e Express, seguindo uma estrutura inspirada no padrão MVC (Model-View-Controller). O sistema gerencia três recursos principais:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaioSoandrd/Desafio-4-sistemaDetran.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaioSoandrd/Desafio-4-sistemaDetran/issues"
+  },
+  "homepage": "https://github.com/CaioSoandrd/Desafio-4-sistemaDetran#readme"
+}

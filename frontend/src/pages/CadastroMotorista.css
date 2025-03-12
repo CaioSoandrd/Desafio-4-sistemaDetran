@@ -87,3 +87,20 @@ input::placeholder {
 .input-field::-moz-select {
   appearance: none;
 }
+
+.btn-cadastrar {
+  width: 100%;
+  padding: 10px;
+  background-color: #f18c2b; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-cadastrar:hover {
+  background-color: #d97706;
+}
+

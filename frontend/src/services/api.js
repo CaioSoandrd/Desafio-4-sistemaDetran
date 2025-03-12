@@ -1,15 +1,25 @@
-import axios from 'axios';
+const API_URL = "http://localhost:5001";
 
-const api = axios.create({
-    baseURL: '/api/',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
-
-export const getDados = async () => {
-    const response = await api.get('/dados');
-    return response.data;
+export async function fecthData(endpoint) {
+    try {
+        const response = await fetch (`${API_URL}/${endpoint}`);
+        return await response.json();
+    } catch(error) {
+        console.error("Erro ao buscar dados:", error);
+        return [];
+    }
 }
 
-export default api;
+export async function postData(endpoint, data) {
+    try {
+        const response = await fetch(`${API_URL}/${endpoint}`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data),
+        });
+        return await response.json();
+    }   catch (error) {
+        console.error("Erro ao enviar dados:", error);
+        return null;
+    }
+}

@@ -5,6 +5,7 @@ const app = express();
 // middlewares básicos
 app.use(express.json()); // para parsing de JSON
 app.use(express.urlencoded({ extended: false })); // para parsing de formulários
+app.use(cors()); // para permitir requisições de outros domínios
 
 // importação das rotas com caminhos relativos corretos
 const motoristasRouter = require('./routes/motoristas');

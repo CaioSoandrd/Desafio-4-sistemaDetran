@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Documentação da API - Desafio-4-sistemaDetran
 
 ## Visão Geral
@@ -6,14 +6,12 @@
 Esta API foi desenvolvida para resolver o desafio final do processo trainee da EngNet. Ela é construída em Node.js com Express e segue o padrão MVC (Model-View-Controller), possibilitando a separação clara entre a lógica de negócios, acesso a dados e a camada de apresentação (rotas).
 
 A API gerencia três recursos principais:
-=======
-# Documentação Geral da API - Desafio-4-sistemaDetran
 
 ## Visão Geral
 
 Esta API foi desenvolvida como parte da solução do desafio final do processo trainee da EngNet. Ela foi construída utilizando Node.js e Express, seguindo uma estrutura inspirada no padrão MVC (Model-View-Controller). O sistema gerencia três recursos principais:
 
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Motoristas**
 - **Veículos**
 - **Multas**
@@ -78,18 +76,15 @@ O backend do projeto está organizado da seguinte maneira:
 
 A seguir, detalhamos os endpoints para cada recurso.
 
----
-
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
 ### 1. Motoristas
 
 #### a) Cadastro de Motorista
 - **Endpoint:** `POST /motoristas`
-<<<<<<< HEAD
+
 - **Funcionalidade:** Cria um novo motorista no sistema.
 =======
 - **Descrição:** Cria um novo motorista. É obrigatório fornecer os campos `nome` e `cpf`. O campo `pontos` é opcional e, se não informado, assume o valor 0.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Requisição:**
   - **Cabeçalho:** `Content-Type: application/json`
   - **Corpo (JSON):**
@@ -101,14 +96,14 @@ A seguir, detalhamos os endpoints para cada recurso.
     }
     ```
   - **Validações:**  
-<<<<<<< HEAD
+
     - Os campos `nome` e `cpf` são obrigatórios.
     - O CPF deve estar no formato de 11 dígitos ou no formato `xxx.xxx.xxx-xx`. Caso contrário, a API retorna um erro 400.
     - Se o campo `pontos` não for informado, o valor padrão será 0.
 =======
     - O CPF deve estar no formato de 11 dígitos ou no formato `xxx.xxx.xxx-xx`.
     - Se o CPF não estiver no formato correto, a API retornará um erro 400 (Bad Request).
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 201 Created:**  
     ```json
@@ -122,7 +117,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     }
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **400 Bad Request:** Falta de campos obrigatórios ou CPF em formato inválido.
   - **500 Internal Server Error:** Erro interno na criação do motorista.
@@ -138,7 +133,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### b) Listagem de Motoristas
 - **Endpoint:** `GET /motoristas`
 - **Descrição:** Recupera a lista de todos os motoristas cadastrados.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -157,7 +152,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     ]
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao recuperar a lista de motoristas.
 
@@ -175,7 +170,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Descrição:** Recupera as informações de um motorista específico identificado pelo seu ID.
 - **Parâmetros de URL:**
   - `id`: Número identificador do motorista.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -187,7 +182,7 @@ A seguir, detalhamos os endpoints para cada recurso.
     }
     ```
   - **Status 404 Not Found:** Caso o motorista não seja encontrado.
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Falha ao buscar o motorista.
 
@@ -212,7 +207,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     ]
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao processar a consulta.
 =======
@@ -226,7 +221,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 
 #### a) Cadastro de Veículo
 - **Endpoint:** `POST /veiculos`
-<<<<<<< HEAD
+
 - **Funcionalidade:** Registra um novo veículo no sistema, vinculado a um motorista.
 =======
 - **Descrição:** Cria um novo veículo no sistema, associando-o a um motorista por meio do campo `motorista_id`. Os campos obrigatórios são `placa`, `modelo`, `cor` e `motorista_id`.
@@ -256,7 +251,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     }
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **400 Bad Request:** Campos obrigatórios não foram enviados.
   - **500 Internal Server Error:** Erro interno na criação do veículo.
@@ -323,7 +318,6 @@ A seguir, detalhamos os endpoints para cada recurso.
       "motorista_id": 1
     }
     ```
-<<<<<<< HEAD
   - **Status 404 Not Found:** Veículo não encontrado.
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Erro durante a consulta.
@@ -350,7 +344,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       "mensagem": "veículo deletado com sucesso"
     }
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao deletar o veículo.
 
@@ -385,7 +379,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 
 #### a) Cadastro de Multa
 - **Endpoint:** `POST /multas`
-<<<<<<< HEAD
+
 - **Funcionalidade:** Registra uma nova multa para um motorista.
 =======
 - **Descrição:** Registra uma nova multa para um motorista. São obrigatórios os campos `data`, `valor`, `descricao`, `pontos` e `motorista_id`.
@@ -417,7 +411,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     }
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **400 Bad Request:** Campos obrigatórios faltando.
   - **500 Internal Server Error:** Erro interno no cadastro da multa.
@@ -433,7 +427,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### b) Listagem de Multas
 - **Endpoint:** `GET /multas`
 - **Descrição:** Lista todas as multas registradas na API.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -456,7 +450,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     ]
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Falha ao recuperar multas.
 
@@ -472,7 +466,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `GET /multas/{id}`
 - **Descrição:** Recupera os detalhes de uma multa específica informada pelo seu ID.
 - **Parâmetros de URL:**
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
   - `id`: Identificador da multa.
 - **Resposta:**
   - **Status 200 OK:**
@@ -520,7 +514,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     ]
     ```
-<<<<<<< HEAD
+
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Erro ao buscar as multas do motorista.
 
@@ -674,4 +668,3 @@ fetch("http://localhost:3001/multas", {
 =======
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Se houver erro na consulta.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)

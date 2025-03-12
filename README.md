@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Documentação da API - Desafio-4-sistemaDetran
 
 ## Visão Geral
@@ -5,10 +6,19 @@
 Esta API foi desenvolvida para resolver o desafio final do processo trainee da EngNet. Ela é construída em Node.js com Express e segue o padrão MVC (Model-View-Controller), possibilitando a separação clara entre a lógica de negócios, acesso a dados e a camada de apresentação (rotas).
 
 A API gerencia três recursos principais:
+=======
+# Documentação Geral da API - Desafio-4-sistemaDetran
+
+## Visão Geral
+
+Esta API foi desenvolvida como parte da solução do desafio final do processo trainee da EngNet. Ela foi construída utilizando Node.js e Express, seguindo uma estrutura inspirada no padrão MVC (Model-View-Controller). O sistema gerencia três recursos principais:
+
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Motoristas**
 - **Veículos**
 - **Multas**
 
+<<<<<<< HEAD
 Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção (quando aplicável). Todas as operações do backend são realizadas de forma assíncrona utilizando callbacks. A integração com o frontend (localizado na pasta `frontend`) é feita consumindo esses endpoints.
 
 ---
@@ -40,11 +50,46 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 
 ## Operações da API
 
+=======
+Cada recurso possui seus endpoints correspondentes para operações de criação, consulta e deleção, permitindo a interação com um banco de dados por meio de chamadas assíncronas utilizando callbacks.
+
+> **Observação:**  
+> O código atual utiliza callbacks para tratar operações assíncronas. Caso seja de interesse, é possível refatorar a implementação para async/await visando melhorar a legibilidade e o tratamento de erros, desde que os métodos dos modelos sejam adaptados para retornar Promises.
+
+## Estrutura do Projeto
+
+O backend do projeto está organizado da seguinte maneira:
+- **Controllers:**  
+  Localizados na pasta `backend/controllers`, os controllers são responsáveis por receber as requisições, validar os dados, invocar os métodos dos modelos e enviar as respostas HTTP.
+  
+- **Modelos:**  
+  Conforme a estrutura MVC, a pasta `backend/models` contém a lógica de acesso ao banco de dados e manipulação dos dados referentes a cada recurso (motoristas, veículos, multas).
+
+- **Rotas:**  
+  Os arquivos dentro da pasta `backend/routes` definem as rotas que mapeiam os endpoints da API para as funções específicas dos controllers.
+
+- **Teste e Outras Configurações:**  
+  A pasta `backend/tests` pode conter testes que auxiliam na validação das funcionalidades da API. O arquivo `.gitignore` está configurado para ocultar dependências, logs e arquivos temporários.
+
+- **Aplicação:**  
+  O arquivo `backend/app.js` configura a aplicação Express, define os middlewares para parsing de JSON e formulários, e mapeia as rotas principais para cada recurso.
+
+## Endpoints da API
+
+A seguir, detalhamos os endpoints para cada recurso.
+
+---
+
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 ### 1. Motoristas
 
 #### a) Cadastro de Motorista
 - **Endpoint:** `POST /motoristas`
+<<<<<<< HEAD
 - **Funcionalidade:** Cria um novo motorista no sistema.
+=======
+- **Descrição:** Cria um novo motorista. É obrigatório fornecer os campos `nome` e `cpf`. O campo `pontos` é opcional e, se não informado, assume o valor 0.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Requisição:**
   - **Cabeçalho:** `Content-Type: application/json`
   - **Corpo (JSON):**
@@ -56,9 +101,14 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
     }
     ```
   - **Validações:**  
+<<<<<<< HEAD
     - Os campos `nome` e `cpf` são obrigatórios.
     - O CPF deve estar no formato de 11 dígitos ou no formato `xxx.xxx.xxx-xx`. Caso contrário, a API retorna um erro 400.
     - Se o campo `pontos` não for informado, o valor padrão será 0.
+=======
+    - O CPF deve estar no formato de 11 dígitos ou no formato `xxx.xxx.xxx-xx`.
+    - Se o CPF não estiver no formato correto, a API retornará um erro 400 (Bad Request).
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 201 Created:**  
     ```json
@@ -72,6 +122,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     }
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **400 Bad Request:** Falta de campos obrigatórios ou CPF em formato inválido.
   - **500 Internal Server Error:** Erro interno na criação do motorista.
@@ -79,6 +130,15 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 #### b) Listagem de Motoristas
 - **Endpoint:** `GET /motoristas`
 - **Funcionalidade:** Retorna um array com todos os motoristas cadastrados.
+=======
+- **Possíveis Erros:**
+  - **400 Bad Request:** Falta de campos obrigatórios ou CPF inválido.
+  - **500 Internal Server Error:** Erro interno no cadastro.
+
+#### b) Listagem de Motoristas
+- **Endpoint:** `GET /motoristas`
+- **Descrição:** Recupera a lista de todos os motoristas cadastrados.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -97,6 +157,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     ]
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao recuperar a lista de motoristas.
 
@@ -105,6 +166,16 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 - **Funcionalidade:** Recupera os detalhes de um motorista específico identificado pelo ID.
 - **Parâmetros de URL:**  
   - `id`: Identificador numérico do motorista.
+=======
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Caso ocorra erro ao acessar os dados.
+
+#### c) Consulta de Motorista por ID
+- **Endpoint:** `GET /motoristas/{id}`
+- **Descrição:** Recupera as informações de um motorista específico identificado pelo seu ID.
+- **Parâmetros de URL:**
+  - `id`: Número identificador do motorista.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -116,12 +187,19 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
     }
     ```
   - **Status 404 Not Found:** Caso o motorista não seja encontrado.
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Falha ao buscar o motorista.
 
 #### d) Motoristas com Alta Pontuação
 - **Endpoint:** `GET /motoristas/highscore`
 - **Funcionalidade:** Retorna os motoristas que possuem alta pontuação de acordo com critérios definidos.
+=======
+
+#### d) Motoristas com Alta Pontuação
+- **Endpoint:** `GET /motoristas/highscore`
+- **Descrição:** Recupera motoristas que possuem alta pontuação. Este endpoint pode ser utilizado para identificar aqueles com melhores recordes de pontuação.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -134,8 +212,13 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     ]
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao processar a consulta.
+=======
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Caso ocorra erro na consulta.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 
 ---
 
@@ -143,7 +226,11 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 
 #### a) Cadastro de Veículo
 - **Endpoint:** `POST /veiculos`
+<<<<<<< HEAD
 - **Funcionalidade:** Registra um novo veículo no sistema, vinculado a um motorista.
+=======
+- **Descrição:** Cria um novo veículo no sistema, associando-o a um motorista por meio do campo `motorista_id`. Os campos obrigatórios são `placa`, `modelo`, `cor` e `motorista_id`.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Requisição:**
   - **Cabeçalho:** `Content-Type: application/json`
   - **Corpo (JSON):**
@@ -169,6 +256,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     }
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **400 Bad Request:** Campos obrigatórios não foram enviados.
   - **500 Internal Server Error:** Erro interno na criação do veículo.
@@ -176,6 +264,15 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 #### b) Listagem de Veículos
 - **Endpoint:** `GET /veiculos`
 - **Funcionalidade:** Retorna um array com todos os veículos cadastrados.
+=======
+- **Possíveis Erros:**
+  - **400 Bad Request:** Falta de campos obrigatórios.
+  - **500 Internal Server Error:** Problemas internos durante o cadastro.
+
+#### b) Listagem de Veículos
+- **Endpoint:** `GET /veiculos`
+- **Descrição:** Retorna um array de todos os veículos cadastrados.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -196,6 +293,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     ]
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Falha ao recuperar a lista de veículos.
 
@@ -204,6 +302,16 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 - **Funcionalidade:** Retorna detalhes de um veículo específico identifcado pelo seu ID.
 - **Parâmetros de URL:**  
   - `id`: Identificador numérico do veículo.
+=======
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Em caso de falha ao acessar os registros.
+
+#### c) Consulta de Veículo por ID
+- **Endpoint:** `GET /veiculos/{id}`
+- **Descrição:** Obtém os detalhes de um veículo específico pelo seu ID.
+- **Parâmetros de URL:**
+  - `id`: Identificador do veículo.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -215,6 +323,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       "motorista_id": 1
     }
     ```
+<<<<<<< HEAD
   - **Status 404 Not Found:** Veículo não encontrado.
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Erro durante a consulta.
@@ -223,6 +332,16 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 - **Endpoint:** `DELETE /veiculos/{id}`
 - **Funcionalidade:** Remove um veículo do sistema com base no seu ID.
 - **Parâmetros de URL:**  
+=======
+  - **Status 404 Not Found:** Se não houver veículo com o ID solicitado.
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Se ocorrer um erro durante a consulta.
+
+#### d) Deleção de Veículo por ID
+- **Endpoint:** `DELETE /veiculos/{id}`
+- **Descrição:** Remove um veículo do sistema baseado em seu ID.
+- **Parâmetros de URL:**
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
   - `id`: Identificador do veículo.
 - **Resposta:**
   - **Status 200 OK:**
@@ -231,6 +350,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       "mensagem": "veículo deletado com sucesso"
     }
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao deletar o veículo.
 
@@ -254,6 +374,10 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
     ```
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Erro ao consultar os veículos do motorista.
+=======
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Caso ocorra um erro durante a deleção.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 
 ---
 
@@ -261,7 +385,11 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 
 #### a) Cadastro de Multa
 - **Endpoint:** `POST /multas`
+<<<<<<< HEAD
 - **Funcionalidade:** Registra uma nova multa para um motorista.
+=======
+- **Descrição:** Registra uma nova multa para um motorista. São obrigatórios os campos `data`, `valor`, `descricao`, `pontos` e `motorista_id`.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Requisição:**
   - **Cabeçalho:** `Content-Type: application/json`
   - **Corpo (JSON):**
@@ -289,6 +417,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     }
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **400 Bad Request:** Campos obrigatórios faltando.
   - **500 Internal Server Error:** Erro interno no cadastro da multa.
@@ -296,6 +425,15 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 #### b) Listagem de Multas
 - **Endpoint:** `GET /multas`
 - **Funcionalidade:** Retorna um array com todas as multas registradas.
+=======
+- **Possíveis Erros:**
+  - **400 Bad Request:** Se faltar algum campo obrigatório.
+  - **500 Internal Server Error:** Em caso de erro no cadastro.
+
+#### b) Listagem de Multas
+- **Endpoint:** `GET /multas`
+- **Descrição:** Lista todas as multas registradas na API.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -318,6 +456,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     ]
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Falha ao recuperar multas.
 
@@ -325,6 +464,15 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 - **Endpoint:** `GET /multas/{id}`
 - **Funcionalidade:** Retorna os detalhes de uma multa específica, identificada pelo seu ID.
 - **Parâmetros de URL:**  
+=======
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Em caso de falha ao consultar as multas.
+
+#### c) Consulta de Multa por ID
+- **Endpoint:** `GET /multas/{id}`
+- **Descrição:** Recupera os detalhes de uma multa específica informada pelo seu ID.
+- **Parâmetros de URL:**
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
   - `id`: Identificador da multa.
 - **Resposta:**
   - **Status 200 OK:**
@@ -338,6 +486,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       "motorista_id": 1
     }
     ```
+<<<<<<< HEAD
   - **Status 404 Not Found:** Multa não encontrada.
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema na consulta.
@@ -346,6 +495,16 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 - **Endpoint:** `GET /multas/motorista/{motorista_id}`
 - **Funcionalidade:** Retorna todas as multas associadas a um motorista específico.
 - **Parâmetros de URL:**  
+=======
+  - **Status 404 Not Found:** Se a multa não for encontrada.
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Caso ocorra um erro durante a consulta.
+
+#### d) Consulta de Multas por Motorista
+- **Endpoint:** `GET /multas/motorista/{motorista_id}`
+- **Descrição:** Recupera todas as multas associadas a um motorista específico.
+- **Parâmetros de URL:**
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
   - `motorista_id`: Identificador do motorista.
 - **Resposta:**
   - **Status 200 OK:**
@@ -361,6 +520,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
       }
     ]
     ```
+<<<<<<< HEAD
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Erro ao buscar as multas do motorista.
 
@@ -511,3 +671,7 @@ fetch("http://localhost:3001/multas", {
 
   export default Motoristas;
   ```
+=======
+- **Possíveis Erros:**
+  - **500 Internal Server Error:** Se houver erro na consulta.
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)

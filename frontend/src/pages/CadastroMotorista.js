@@ -17,6 +17,7 @@ const CadastroMotorista = () => {
         <form>
   <input type="text" placeholder="Nome do condutor" />
   <input type="text" placeholder="CPF" />
+<<<<<<< HEAD
   <input type="text" placeholder="Data de nascimento" />
   
 
@@ -29,6 +30,10 @@ const CadastroMotorista = () => {
     <option value="masculino">Masculino</option>
     <option value="feminino">Feminino</option>
   </select>
+=======
+  <input type="text" placeholder="Pontos" />
+
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 
 </form>
 

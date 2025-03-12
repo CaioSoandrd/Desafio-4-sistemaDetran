@@ -15,6 +15,7 @@ const CadastroMotorista = () => {
         <h2>Cadastro de Multas</h2>
         <form>
         <form>
+<<<<<<< HEAD
   <input type="text" placeholder="Infração" />
   <input type="text" placeholder="Velocidade indentificada" />
   <input type="text" placeholder="Data" />
@@ -24,6 +25,16 @@ const CadastroMotorista = () => {
   <input type="text" placeholder="Placa do veículo"/>
   <input type="text" placeholder="Lugar"/>
   <input type="text" placeholder="Tipo de infração"/>
+=======
+
+  <input type="text" placeholder="Data" />
+  
+
+  <input type="text" placeholder="Valor"/>
+  <input type="text" placeholder="Descriçao"/>
+  <input type="text" placeholder="Pontos"/>
+
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
 
 
 </form>

@@ -55,12 +55,17 @@ const ConsultaVeiculo = () => {
         {veiculo && (
           <div className="resultado">
             <p><strong>Placa:</strong> {veiculo.placa}</p>
+<<<<<<< HEAD
             <p><strong>Renavam:</strong> {veiculo.renavam}</p>
             <p><strong>Ano de Fabricação:</strong> {veiculo.ano_fabricacao}</p>
             <p><strong>Cor:</strong> {veiculo.cor}</p>
             <p><strong>Chassi:</strong> {veiculo.chassi}</p>
             <p><strong>Proprietário (CPF):</strong> {veiculo.cpf_proprietario}</p>
             <p><strong>Status:</strong> {veiculo.status}</p>
+=======
+            <p><strong>Modelo:</strong> {veiculo.modelo}</p>
+            <p><strong>Cor:</strong> {veiculo.cor}</p>
+>>>>>>> eace26b (campos de cadastro e consulta atualizados)
           </div>
         )}
       </div>

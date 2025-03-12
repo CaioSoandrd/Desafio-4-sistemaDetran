@@ -1,9 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 import "./CadastroMotorista.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.png"; 
 
 const CadastroMotorista = () => {
+  const navigate = useNavigate(); 
+
+  const handleCadastro = (event) => {
+    event.preventDefault();
+
+    navigate("/"); 
+  };
+
   return (
     <div className="cadastro-container">
       <header className="header">
@@ -13,17 +21,11 @@ const CadastroMotorista = () => {
 
       <div className="form-container">
         <h2>Cadastro de motorista</h2>
-        <form>
-          <form>
-            <input type="text" placeholder="Nome do condutor" />
-            <input type="text" placeholder="CPF" />
-
-            <input type="text" placeholder="Pontos" />
-
-
-
-          </form>
-
+        <form onSubmit={handleCadastro}>
+          <input type="text" placeholder="Nome do condutor" required />
+          <input type="text" placeholder="CPF" required />
+          <input type="text" placeholder="Pontos" required />
+          <button type="submit" className="btn-cadastrar">Cadastrar</button>
         </form>
       </div>
     </div>

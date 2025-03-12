@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./ConsultaMotorista.css"; 
+import "./ConsultaMotorista.css";
 import logo from "../assets/logo.png";
 
 const ConsultaVeiculo = () => {
   const [placa, setPlaca] = useState("");
   const [veiculo, setVeiculo] = useState(null);
-  const [erro, setErro] = useState(""); 
+  const [erro, setErro] = useState("");
 
   const buscarVeiculo = async () => {
     if (placa.length < 7) {
@@ -14,7 +14,7 @@ const ConsultaVeiculo = () => {
     }
 
     try {
-      setErro(""); 
+      setErro("");
 
       const resposta = await fetch(`http://localhost:5001/veiculos/${placa}`);
       if (!resposta.ok) {
@@ -55,17 +55,10 @@ const ConsultaVeiculo = () => {
         {veiculo && (
           <div className="resultado">
             <p><strong>Placa:</strong> {veiculo.placa}</p>
-<<<<<<< HEAD
-            <p><strong>Renavam:</strong> {veiculo.renavam}</p>
-            <p><strong>Ano de Fabricação:</strong> {veiculo.ano_fabricacao}</p>
-            <p><strong>Cor:</strong> {veiculo.cor}</p>
-            <p><strong>Chassi:</strong> {veiculo.chassi}</p>
-            <p><strong>Proprietário (CPF):</strong> {veiculo.cpf_proprietario}</p>
-            <p><strong>Status:</strong> {veiculo.status}</p>
-=======
+
             <p><strong>Modelo:</strong> {veiculo.modelo}</p>
             <p><strong>Cor:</strong> {veiculo.cor}</p>
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
           </div>
         )}
       </div>

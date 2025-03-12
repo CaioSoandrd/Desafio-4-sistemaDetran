@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CadastroMotorista.css";
-import logo from "../assets/logo.png"; 
+import logo from "../assets/logo.png";
 
 const CadastroMotorista = () => {
   return (
@@ -14,28 +14,15 @@ const CadastroMotorista = () => {
       <div className="form-container">
         <h2>Cadastro de motorista</h2>
         <form>
-        <form>
-  <input type="text" placeholder="Nome do condutor" />
-  <input type="text" placeholder="CPF" />
-<<<<<<< HEAD
-  <input type="text" placeholder="Data de nascimento" />
-  
+          <form>
+            <input type="text" placeholder="Nome do condutor" />
+            <input type="text" placeholder="CPF" />
 
-  <input type="text" placeholder="CEP"/>
-  <input type="text" placeholder="Número de telefone"/>
+            <input type="text" placeholder="Pontos" />
 
-    {/* Campo de seleção para Sexo */}
-    <select className="input-field">
-    <option value="">Selecione o sexo</option>
-    <option value="masculino">Masculino</option>
-    <option value="feminino">Feminino</option>
-  </select>
-=======
-  <input type="text" placeholder="Pontos" />
 
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
 
-</form>
+          </form>
 
         </form>
       </div>

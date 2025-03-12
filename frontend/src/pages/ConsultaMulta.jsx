@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./ConsultaMotorista.css"; 
+import "./ConsultaMotorista.css";
 import logo from "../assets/logo.png";
 
 const ConsultaMulta = () => {
   const [idMulta, setIdMulta] = useState("");
   const [multa, setMulta] = useState(null);
-  const [erro, setErro] = useState(""); 
+  const [erro, setErro] = useState("");
 
   const buscarMulta = async () => {
     if (!idMulta) {
@@ -14,7 +14,7 @@ const ConsultaMulta = () => {
     }
 
     try {
-      setErro(""); 
+      setErro("");
 
       const resposta = await fetch(`http://localhost:5001/multas/${idMulta}`);
       if (!resposta.ok) {
@@ -53,20 +53,12 @@ const ConsultaMulta = () => {
 
         {multa && (
           <div className="resultado">
-<<<<<<< HEAD
-            <p><strong>ID Infração:</strong> {multa.idInfracao}</p>
-            <p><strong>Velocidade Identificada:</strong> {multa.velocidade_identificada} km/h</p>
-            <p><strong>Data e Hora:</strong> {multa.data_hora}</p>
-            <p><strong>Placa do Veículo:</strong> {multa.placa_veiculo}</p>
-            <p><strong>Matrícula do Agente:</strong> {multa.matricula_agente}</p>
-            <p><strong>Local da Infração:</strong> {multa.idLugar_lugar}</p>
-            <p><strong>Tipo de Infração:</strong> {multa.idTipo_tipo_infracao}</p>
-=======
+
             <p><strong>Data:</strong> {multa.data}</p>
             <p><strong>Valor:</strong> {multa.valor}</p>
             <p><strong>Descrição:</strong> {multa.descricao}</p>
             <p><strong>Pontos:</strong> {multa.pontos}</p>
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
           </div>
         )}
       </div>

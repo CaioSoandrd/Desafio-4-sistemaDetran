@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./ConsultaMotorista.css"; 
+import "./ConsultaMotorista.css";
 import logo from "../assets/logo.png";
 
 const ConsultaMotorista = () => {
   const [cpf, setCpf] = useState("");
   const [motorista, setMotorista] = useState(null);
-  const [erro, setErro] = useState(""); 
+  const [erro, setErro] = useState("");
 
   const buscarMotorista = async () => {
     if (cpf.length !== 11) {
@@ -14,7 +14,7 @@ const ConsultaMotorista = () => {
     }
 
     try {
-      setErro(""); 
+      setErro("");
 
       const resposta = await fetch(`http://localhost:5001/motoristas/${cpf}`);
       if (!resposta.ok) {
@@ -54,17 +54,11 @@ const ConsultaMotorista = () => {
 
         {motorista && (
           <div className="resultado">
-<<<<<<< HEAD
-            <p><strong>Nome:</strong> {motorista.proprietario_nome}</p>
-            <p><strong>Data de Nascimento:</strong> {motorista.data_nascimento}</p>
-            <p><strong>Sexo:</strong> {motorista.sexo}</p>
-            <p><strong>CEP:</strong> {motorista.cep_endereco}</p>
-            <p><strong>Telefone:</strong> {motorista.num_telefone_telefone}</p>
-=======
+
             <p><strong>Nome:</strong> {motorista.nome}</p>
             <p><strong>CPF:</strong> {motorista.cpf}</p>
             <p><strong>Pontos:</strong> {motorista.pontos}</p>
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
           </div>
         )}
       </div>

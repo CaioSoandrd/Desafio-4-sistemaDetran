@@ -16,7 +16,7 @@ Esta API foi desenvolvida como parte da solução do desafio final do processo t
 - **Veículos**
 - **Multas**
 
-<<<<<<< HEAD
+
 Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção (quando aplicável). Todas as operações do backend são realizadas de forma assíncrona utilizando callbacks. A integração com o frontend (localizado na pasta `frontend`) é feita consumindo esses endpoints.
 
 ---

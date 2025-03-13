@@ -9,6 +9,6 @@ router.get('/', motoristaController.getAllMotoristas);
 
 router.get('/pontuacao-alta', motoristaController.getHighScoreMotoristas);
 
-router.get('/:id', motoristaController.getMotoristaById);
+router.get('/:CPF', motoristaController.getMotoristaByCPF);
 
 module.exports = router;

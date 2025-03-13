@@ -56,9 +56,13 @@ exports.getHighScoreMotoristas = (req, res) => {
 };
 
 
-exports.getMotoristaById = (req, res) => {
-    const { id } = req.params;
-    Motorista.getById(id, (err, results) => {
+exports.getMotoristaByCPF = (req, res) => {
+    const { cpf } = req.params; // espera que o CPF seja enviado pela URL
+    if (!cpf || !validarCPF(cpf)) {
+        return res.status(400).json({ erro: "CPF inválido" });
+    }
+
+    Motorista.getByCPF(cpf, (err, results) => {
         if (err) {
             return res.status(500).json({ erro: "Erro ao buscar motorista" });
         }

@@ -16,7 +16,7 @@ const ConsultaMotorista = () => {
     try {
       setErro("");
 
-      const resposta = await fetch(`http://localhost:5001/motoristas/${cpf}`);
+      const resposta = await fetch(`http://localhost:5001/api/motoristas/${cpf}`);
       if (!resposta.ok) {
         throw new Error("Motorista não encontrado");
       }

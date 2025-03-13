@@ -16,7 +16,7 @@ const ConsultaMulta = () => {
     try {
       setErro("");
 
-      const resposta = await fetch(`http://localhost:5001/multas/${idMulta}`);
+      const resposta = await fetch(`http://localhost:5001/api/multas/${idMulta}`);
       if (!resposta.ok) {
         throw new Error("Multa não encontrada");
       }

@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-
+const cors = require('cors');
 
 // middlewares básicos
 app.use(express.json()); // para parsing de JSON
 app.use(express.urlencoded({ extended: false })); // para parsing de formulários
-app.use(cors()); // para permitir requisições de outros domínios
+app.use(cors()); // Permite requisições de qualquer origem 
 
 // importação das rotas com caminhos relativos corretos
 const motoristasRouter = require('./routes/motoristas');
@@ -29,7 +29,7 @@ app.use((err, req, res, next) => {
 });
 
 // configuração da porta
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5001;
 
 // inicialização do servidor
 app.listen(PORT, () => {

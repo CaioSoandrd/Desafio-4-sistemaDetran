@@ -529,12 +529,12 @@ Esta seção detalha como consumir os endpoints do backend, seja para testes aut
 - **Inicie o Servidor:**  
   Navegue até a pasta do backend e execute o comando:
   ```bash
-  PORT=3001 node backend/app.js
+  PORT=5001 node backend/app.js
   ```
 - **URL Base:**  
   Todas as requisições devem apontar para:
   ```
-  http://localhost:3001
+  http://localhost:5001
   ```
 
 ### 2. Exemplos de Consumo com Código
@@ -543,7 +543,7 @@ Esta seção detalha como consumir os endpoints do backend, seja para testes aut
 
 **Cadastro de Motorista:**
 ```javascript
-fetch("http://localhost:3001/motoristas", {
+fetch("http://localhost:5001/motoristas", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -561,7 +561,7 @@ fetch("http://localhost:3001/motoristas", {
 
 **Listagem de Veículos:**
 ```javascript
-fetch("http://localhost:3001/veiculos", {
+fetch("http://localhost:5001/veiculos", {
   method: "GET"
 })
 .then(response => response.json())
@@ -571,7 +571,7 @@ fetch("http://localhost:3001/veiculos", {
 
 **Cadastro de Multa:**
 ```javascript
-fetch("http://localhost:3001/multas", {
+fetch("http://localhost:5001/multas", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -594,7 +594,7 @@ fetch("http://localhost:3001/multas", {
 - **Variáveis de Ambiente:**  
   No frontend, defina a URL base da API em uma variável de ambiente. Em um projeto React, por exemplo:
   ```bash
-  REACT_APP_API_URL=http://localhost:3001
+  REACT_APP_API_URL=http://localhost:5001
   ```
 - **Centralize as Chamadas:**  
   Crie um módulo de serviços para encapsular as chamadas API (ex.: `src/services/api.js`).  

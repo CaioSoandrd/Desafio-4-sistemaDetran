@@ -21,13 +21,13 @@ let veiculos = [
 
 let multas = [
   { id: 1, motoristaId: 1, descricao: "Excesso de velocidade", valor: 150.00 },
-  { id: 2, motoristaId: 2, descricao: "Estacionamento proibido", valor: 80.00}
+  { id: 2, motoristaId: 2, descricao: "Estacionamento proibido", valor: 80.00 }
 ];
 
 app.post('/motoristas', (req, res) => {
-  const { nome,pontos } = req.body;
+  const { nome, pontos } = req.body;
   const novoMotorista = {
-    id: motoristas.length + 1, 
+    id: motoristas.length + 1,
     nome,
     pontos: pontos || 0
   };
@@ -57,7 +57,7 @@ app.listen(PORT, () => {
 
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 

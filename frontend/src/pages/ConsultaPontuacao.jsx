@@ -20,7 +20,7 @@ const ConsultaPontuacao = () => {
 
 
 
-      const resposta = await fetch(`http://localhost:5000/motoristas/pontuacao/${cpf}`);
+      const resposta = await fetch(`http://localhost:5001/motoristas/pontuacao/${cpf}`);
 
       if (!resposta.ok) {
         throw new Error("Motorista não encontrado ou com menos de 10 pontos");

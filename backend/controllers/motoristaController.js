@@ -101,7 +101,14 @@ exports.getMotoristaByCPF = (req, res) => {
         });
     };
 
-      exports.getHighScoreMotoristaByCP(cpf, (err, results) => {
+    exports.getHighScoreMotoristaByCPF = (req, res) => {
+        const { cpf } = req.params;
+
+        if (!validarCPF(cpf)) {
+            return res.status(400).json({ erro: "CPF inválido" });
+        }
+
+        Motorista.getHighScoreByCPF(cpf, (err, results) => {
             if (err) {
                 return res.status(500).json({ erro: "Erro ao buscar motorista" });
             }
@@ -110,6 +117,6 @@ exports.getMotoristaByCPF = (req, res) => {
             }
             res.status(200).json(results[0]);
         });
-
+    };
 
 };

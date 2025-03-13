@@ -19,10 +19,9 @@ const Veiculo = {
     },
 
     // busca um veículo específico pelo ID
-    getById: (id, callback) => {
-
-        const query = "SELECT * FROM veiculos WHERE id = ?";
-        db.query(query, [id], callback);
+    getById: (placa, callback) => { // Alterado para buscar por placa
+        const query = "SELECT * FROM veiculos WHERE placa = ?";
+        db.query(query, [placa], callback);
     },
 
     // busca os veículos associados a um motorista específico
@@ -33,11 +32,11 @@ const Veiculo = {
     },
 
     // deleta um veículo pelo ID
-    deleteById: (id, callback) => {
+    deleteById: (placa, callback) => {
 
-        const query = "DELETE FROM veiculos WHERE id = ?";
+        const query = "DELETE FROM veiculos WHERE placa = ?";
 
-        db.query(query, [id], callback);
+        db.query(query, [placa], callback);
     }
 };
 

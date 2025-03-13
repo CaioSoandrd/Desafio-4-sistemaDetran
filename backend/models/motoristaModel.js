@@ -24,7 +24,7 @@ const Motorista = {
 
         const query = "SELECT * FROM motoristas WHERE cpf = ?";
 
-        db.query(query, [id], callback);
+        db.query(query, [cpf], callback);
     }
 };
 

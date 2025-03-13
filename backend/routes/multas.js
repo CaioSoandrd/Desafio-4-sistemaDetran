@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multaController = require('../controllers/multaController');
+const motoristaController = require("../controllers/motoristaController");
 
 // Criar multa
 router.post('/', multaController.createMulta);

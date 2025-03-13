@@ -1,6 +1,47 @@
 
 # Documentação da API - Desafio-4-sistemaDetran
 
+# Como Executar o Programa
+
+### Pré-requisitos
+Antes de executar o programa, certifique-se de ter instalado:
+- **Node.js** (versão 16 ou superior)
+- **npm** ou **yarn** (gerenciadores de pacotes)
+- **Git** (para clonar o repositório)
+
+### Passos para Executar
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/CaioSoandrd/Desafio-4-sistemaDetran.git
+   cd Desafio-4-sistemaDetran
+
+2. **Instale as dependências do backend:**
+   Navegue até a pasta do backend e instale as dependências:
+   ```bash
+   cd backend
+   npm install
+
+3. **Inicie o servidor backend:**
+   Execute o servidor backend na porta 5001:
+   ```bash
+   PORT=5001 node app.js
+  O servidor estará rodando em http://localhost:5001.
+
+4. **Instale as dependências do frontend:**
+   Em um novo terminal, navegue até a pasta do frontend e instale as dependências::
+   ```bash
+   cd ../frontend
+   npm install
+ 
+5. **Inicie o servidor frontend:**
+   Execute o servidor frontend na porta 3000:
+   ```bash
+   npm start
+
+6. **Acesse a aplicação:**
+  Abra o navegador e acesse http://localhost:3000 para interagir com o sistema.
+ 
 ## Visão Geral
 
 Esta API foi desenvolvida para resolver o desafio final do processo trainee da EngNet. Ela é construída em Node.js com Express e segue o padrão MVC (Model-View-Controller), possibilitando a separação clara entre a lógica de negócios, acesso a dados e a camada de apresentação (rotas).

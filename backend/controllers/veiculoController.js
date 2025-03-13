@@ -42,12 +42,12 @@ exports.getAllVeiculos = (req, res) => {
 };
 
 // Função para buscar um veículo pelo ID
-exports.getVeiculoById = (req, res) => {
+exports.getVeiculoByPlaca = (req, res) => {
     // extrai o ID do veículo dos parâmetros da URL
-    const { id } = req.params;
+    const { placa } = req.params;
 
     // chama a função getById do modelo, que executa um SELECT filtrando pelo ID
-    Veiculo.getById(id, (err, results) => {
+    Veiculo.getById(placa, (err, results) => {
         if (err) {
             return res.status(500).json({ erro: "erro ao buscar veículo" });
         }
@@ -74,9 +74,9 @@ exports.getVeiculosByMotorista = (req, res) => {
 };
 
 // função para deletar um veículo pelo ID
-exports.deleteVeiculoById = (req, res) => {
-    const { id } = req.params;
-    Veiculo.deleteById(id, (err, result) => {
+exports.deleteVeiculoByPlaca = (req, res) => {
+    const { placa } = req.params;
+    Veiculo.deleteById(placa, (err, result) => {
         if (err) {
             return res.status(500).json({ erro: "erro ao deletar veiculo" });
         }

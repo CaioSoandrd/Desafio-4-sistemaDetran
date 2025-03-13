@@ -2,6 +2,11 @@ const db = require('../config/mysql');
 
 const Motorista = {
 
+        getHighScoreByCPF: (cpf, callback) => {
+            const query = "SELECT * FROM motoristas WHERE cpf = ? AND pontos >= 10";
+            db.query(query, [cpf], callback);
+        },
+
     create: (motorista, callback) => {
         const query = "INSERT INTO motoristas (nome, cpf, pontos) VALUES (?, ?, ?)";
         db.query(query, [motorista.nome, motorista.cpf, motorista.pontos], callback);

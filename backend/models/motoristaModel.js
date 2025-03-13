@@ -22,7 +22,7 @@ const Motorista = {
 
     getByCPF: (cpf, callback) => {
 
-        const query = "SELECT * FROM motoristas WHERE CPF = ?";
+        const query = "SELECT * FROM motoristas WHERE cpf = ?";
 
         db.query(query, [id], callback);
     }

@@ -41,17 +41,50 @@ Antes de executar o programa, certifique-se de ter instalado:
 
 6. **Acesse a aplicação:**
   Abra o navegador e acesse http://localhost:3000 para interagir com o sistema.
+
+## Testando a API
+Após iniciar o servidor backend, você pode testar os endpoints da API diretamente no navegador ou usando ferramentas como o Postman ou Insomnia.
+
+## Exemplo de Uso no Navegador
+
+### Listar Motoristas
+Acesse: [http://localhost:5001/api/motoristas](http://localhost:5001/api/motoristas)  
+Você verá uma lista de todos os motoristas cadastrados.
+
+### Consultar Motorista por CPF
+Acesse: [http://localhost:5001/api/motoristas/12345678900](http://localhost:5001/api/motoristas/12345678900)  
+Você verá os detalhes do motorista com CPF "12345678900".
+
+### Listar Veículos
+Acesse: [http://localhost:5001/api/veiculos](http://localhost:5001/api/veiculos)  
+Você verá uma lista de todos os veículos cadastrados.
+
+### Consultar Veículo por Placa
+Acesse: [http://localhost:5001/api/veiculos/ABC1234](http://localhost:5001/api/veiculos/ABC1234)  
+Você verá os detalhes do veículo com placa "ABC-1234".
+
+### Listar Multas
+Acesse: [http://localhost:5001/api/multas](http://localhost:5001/api/multas)  
+Você verá uma lista de todas as multas registradas.
+
+### Consultar Multa por ID
+Acesse: [http://localhost:5001/api/multas/1](http://localhost:5001/api/multas/1)  
+Você verá os detalhes da multa com ID 1.
+
+### Motoristas com Alta Pontuação
+Acesse: [http://localhost:5001/api/motoristas/pontuacao-alta](http://localhost:5001/api/motoristas/pontuacao-alta)  
+Você verá a lista de motoristas com alta pontuação de multas.
+
+## Dicas
+- Use ferramentas como **Postman** ou **Insomnia** para testar os endpoints com métodos HTTP diferentes (`POST`, `PUT`, `DELETE`).
+- Certifique-se de que o servidor backend está rodando corretamente na porta **5001** antes de testar os endpoints.
+
  
 ## Visão Geral
 
 Esta API foi desenvolvida para resolver o desafio final do processo trainee da EngNet. Ela é construída em Node.js com Express e segue o padrão MVC (Model-View-Controller), possibilitando a separação clara entre a lógica de negócios, acesso a dados e a camada de apresentação (rotas).
 
 A API gerencia três recursos principais:
-
-## Visão Geral
-
-Esta API foi desenvolvida como parte da solução do desafio final do processo trainee da EngNet. Ela foi construída utilizando Node.js e Express, seguindo uma estrutura inspirada no padrão MVC (Model-View-Controller). O sistema gerencia três recursos principais:
-
 
 - **Motoristas**
 - **Veículos**

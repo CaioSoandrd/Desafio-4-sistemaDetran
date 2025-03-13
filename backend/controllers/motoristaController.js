@@ -101,15 +101,22 @@ exports.getMotoristaByCPF = (req, res) => {
         });
     };
 
-    exports.getHighScoreMotoristaByCP(cpf, (err, results) => {
-        if (err) {
-            return res.status(500).json({ erro: "Erro ao buscar motorista" });
-        }
-        if (results.length === 0) {
-            return res.status(404).json({ erro: "Motorista não encontrado ou pontuação insuficiente" });
-        }
-        res.status(200).json(results[0]);
-    });
+    exports.getHighScoreMotoristaByCPF = (req, res) => {
+        const { cpf } = req.params;
 
+        if (!validarCPF(cpf)) {
+            return res.status(400).json({ erro: "CPF inválido" });
+        }
+
+        Motorista.getHighScoreByCPF(cpf, (err, results) => {
+            if (err) {
+                return res.status(500).json({ erro: "Erro ao buscar motorista" });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ erro: "Motorista não encontrado ou pontuação insuficiente" });
+            }
+            res.status(200).json(results[0]);
+        });
+    };
 
 };

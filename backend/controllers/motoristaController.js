@@ -62,6 +62,7 @@ exports.getHighScoreMotoristas = (req, res) => {
             return res.status(400).json({ erro: "CPF inválido" });
         }
 
+        // Passa "cpf" e uma função de callback para o modelo
         Motorista.getHighScoreByCPF(cpf, (err, results) => {
             if (err) {
                 return res.status(500).json({ erro: "Erro ao buscar motorista" });
@@ -90,5 +91,25 @@ exports.getMotoristaByCPF = (req, res) => {
         }
         res.status(200).json(results[0]);
     });
+
+    exports.getHighScoreMotoristas = (req, res) => {
+        Motorista.getHighScore((err, results) => {
+            if (err) {
+                return res.status(500).json({ erro: "Erro ao buscar motoristas com pontuação alta" });
+            }
+            res.status(200).json(results);
+        });
+    };
+
+        Motorista.getHighScoreByCPF(cpf, (err, results) => {
+            if (err) {
+                return res.status(500).json({ erro: "Erro ao buscar motorista" });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ erro: "Motorista não encontrado ou pontuação insuficiente" });
+            }
+            res.status(200).json(results[0]);
+        });
+
 
 };

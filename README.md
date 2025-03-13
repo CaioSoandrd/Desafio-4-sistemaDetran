@@ -48,7 +48,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
 
 ## Operações da API
 
-=======
+
 Cada recurso possui seus endpoints correspondentes para operações de criação, consulta e deleção, permitindo a interação com um banco de dados por meio de chamadas assíncronas utilizando callbacks.
 
 > **Observação:**  
@@ -82,7 +82,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `POST /motoristas`
 
 - **Funcionalidade:** Cria um novo motorista no sistema.
-=======
+
 - **Descrição:** Cria um novo motorista. É obrigatório fornecer os campos `nome` e `cpf`. O campo `pontos` é opcional e, se não informado, assume o valor 0.
 
 - **Requisição:**
@@ -100,7 +100,7 @@ A seguir, detalhamos os endpoints para cada recurso.
     - Os campos `nome` e `cpf` são obrigatórios.
     - O CPF deve estar no formato de 11 dígitos ou no formato `xxx.xxx.xxx-xx`. Caso contrário, a API retorna um erro 400.
     - Se o campo `pontos` não for informado, o valor padrão será 0.
-=======
+
     - O CPF deve estar no formato de 11 dígitos ou no formato `xxx.xxx.xxx-xx`.
     - Se o CPF não estiver no formato correto, a API retornará um erro 400 (Bad Request).
 
@@ -125,7 +125,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### b) Listagem de Motoristas
 - **Endpoint:** `GET /motoristas`
 - **Funcionalidade:** Retorna um array com todos os motoristas cadastrados.
-=======
+
 - **Possíveis Erros:**
   - **400 Bad Request:** Falta de campos obrigatórios ou CPF inválido.
   - **500 Internal Server Error:** Erro interno no cadastro.
@@ -161,7 +161,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Funcionalidade:** Recupera os detalhes de um motorista específico identificado pelo ID.
 - **Parâmetros de URL:**  
   - `id`: Identificador numérico do motorista.
-=======
+
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Caso ocorra erro ao acessar os dados.
 
@@ -189,12 +189,12 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### d) Motoristas com Alta Pontuação
 - **Endpoint:** `GET /motoristas/highscore`
 - **Funcionalidade:** Retorna os motoristas que possuem alta pontuação de acordo com critérios definidos.
-=======
+
 
 #### d) Motoristas com Alta Pontuação
 - **Endpoint:** `GET /motoristas/highscore`
 - **Descrição:** Recupera motoristas que possuem alta pontuação. Este endpoint pode ser utilizado para identificar aqueles com melhores recordes de pontuação.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -210,10 +210,10 @@ A seguir, detalhamos os endpoints para cada recurso.
 
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Problema ao processar a consulta.
-=======
+
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Caso ocorra erro na consulta.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 
 ---
 
@@ -223,9 +223,9 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `POST /veiculos`
 
 - **Funcionalidade:** Registra um novo veículo no sistema, vinculado a um motorista.
-=======
+
 - **Descrição:** Cria um novo veículo no sistema, associando-o a um motorista por meio do campo `motorista_id`. Os campos obrigatórios são `placa`, `modelo`, `cor` e `motorista_id`.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Requisição:**
   - **Cabeçalho:** `Content-Type: application/json`
   - **Corpo (JSON):**
@@ -259,7 +259,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### b) Listagem de Veículos
 - **Endpoint:** `GET /veiculos`
 - **Funcionalidade:** Retorna um array com todos os veículos cadastrados.
-=======
+
 - **Possíveis Erros:**
   - **400 Bad Request:** Falta de campos obrigatórios.
   - **500 Internal Server Error:** Problemas internos durante o cadastro.
@@ -267,7 +267,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### b) Listagem de Veículos
 - **Endpoint:** `GET /veiculos`
 - **Descrição:** Retorna um array de todos os veículos cadastrados.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -288,16 +288,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       }
     ]
     ```
-<<<<<<< HEAD
-- **Erros Possíveis:**
-  - **500 Internal Server Error:** Falha ao recuperar a lista de veículos.
 
-#### c) Consulta de Veículo por ID
-- **Endpoint:** `GET /veiculos/{id}`
-- **Funcionalidade:** Retorna detalhes de um veículo específico identifcado pelo seu ID.
-- **Parâmetros de URL:**  
-  - `id`: Identificador numérico do veículo.
-=======
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Em caso de falha ao acessar os registros.
 
@@ -306,7 +297,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Descrição:** Obtém os detalhes de um veículo específico pelo seu ID.
 - **Parâmetros de URL:**
   - `id`: Identificador do veículo.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Resposta:**
   - **Status 200 OK:**
     ```json
@@ -326,7 +317,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `DELETE /veiculos/{id}`
 - **Funcionalidade:** Remove um veículo do sistema com base no seu ID.
 - **Parâmetros de URL:**  
-=======
+
   - **Status 404 Not Found:** Se não houver veículo com o ID solicitado.
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Se ocorrer um erro durante a consulta.
@@ -335,7 +326,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `DELETE /veiculos/{id}`
 - **Descrição:** Remove um veículo do sistema baseado em seu ID.
 - **Parâmetros de URL:**
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
   - `id`: Identificador do veículo.
 - **Resposta:**
   - **Status 200 OK:**
@@ -368,10 +359,10 @@ A seguir, detalhamos os endpoints para cada recurso.
     ```
 - **Erros Possíveis:**
   - **500 Internal Server Error:** Erro ao consultar os veículos do motorista.
-=======
+
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Caso ocorra um erro durante a deleção.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 
 ---
 
@@ -381,9 +372,9 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `POST /multas`
 
 - **Funcionalidade:** Registra uma nova multa para um motorista.
-=======
+
 - **Descrição:** Registra uma nova multa para um motorista. São obrigatórios os campos `data`, `valor`, `descricao`, `pontos` e `motorista_id`.
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
 - **Requisição:**
   - **Cabeçalho:** `Content-Type: application/json`
   - **Corpo (JSON):**
@@ -419,7 +410,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 #### b) Listagem de Multas
 - **Endpoint:** `GET /multas`
 - **Funcionalidade:** Retorna um array com todas as multas registradas.
-=======
+
 - **Possíveis Erros:**
   - **400 Bad Request:** Se faltar algum campo obrigatório.
   - **500 Internal Server Error:** Em caso de erro no cadastro.
@@ -458,7 +449,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `GET /multas/{id}`
 - **Funcionalidade:** Retorna os detalhes de uma multa específica, identificada pelo seu ID.
 - **Parâmetros de URL:**  
-=======
+
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Em caso de falha ao consultar as multas.
 
@@ -480,16 +471,7 @@ A seguir, detalhamos os endpoints para cada recurso.
       "motorista_id": 1
     }
     ```
-<<<<<<< HEAD
-  - **Status 404 Not Found:** Multa não encontrada.
-- **Erros Possíveis:**
-  - **500 Internal Server Error:** Problema na consulta.
 
-#### d) Consulta de Multas por Motorista
-- **Endpoint:** `GET /multas/motorista/{motorista_id}`
-- **Funcionalidade:** Retorna todas as multas associadas a um motorista específico.
-- **Parâmetros de URL:**  
-=======
   - **Status 404 Not Found:** Se a multa não for encontrada.
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Caso ocorra um erro durante a consulta.
@@ -498,7 +480,7 @@ A seguir, detalhamos os endpoints para cada recurso.
 - **Endpoint:** `GET /multas/motorista/{motorista_id}`
 - **Descrição:** Recupera todas as multas associadas a um motorista específico.
 - **Parâmetros de URL:**
->>>>>>> eace26b (campos de cadastro e consulta atualizados)
+
   - `motorista_id`: Identificador do motorista.
 - **Resposta:**
   - **Status 200 OK:**
@@ -665,6 +647,6 @@ fetch("http://localhost:5001/multas", {
 
   export default Motoristas;
   ```
-=======
+
 - **Possíveis Erros:**
   - **500 Internal Server Error:** Se houver erro na consulta.

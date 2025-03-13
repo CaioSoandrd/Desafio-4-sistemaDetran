@@ -73,7 +73,7 @@ Cada recurso dispõe de endpoints para criação, consulta, listagem e deleção
  
 - **backend/db/:**  
   Contém as tabelas SQL e as consultas que podem ser feitas para testes, além dos diagramas conceitual(DER) e lógico (DLD).
-  - Exemplo: `motoristaController.js`, `veiculoController.js`, `multaController.js`.
+  - Exemplo: `tabela.sql`, `popula.sql`.
 
 - **backend/models/:**  
   Implementam a lógica de acesso ao banco de dados (CRUD) para cada recurso.

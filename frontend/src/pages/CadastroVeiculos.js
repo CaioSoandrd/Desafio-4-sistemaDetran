@@ -7,19 +7,25 @@ const CadastroVeiculos = () => {
   const navigate = useNavigate();
 
   // Armazena os valores digitados
+  const [motoristaId, setMotoristaId] = useState("");
   const [placa, setPlaca] = useState("");
-  const [cor, setCor] = useState("");
   const [modelo, setModelo] = useState("");
+  const [cor, setCor] = useState("");
 
   // Função para enviar os dados ao backend
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Criar objeto com os dados do veículo
+    if (!motoristaId.trim() || !placa.trim() || !modelo.trim() || !cor.trim()) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
     const veiculo = {
       placa,
-      cor,
       modelo,
+      cor,
+      motorista_id: parseInt(motoristaId, 10), // Certificando que seja um número inteiro
     };
 
     try {
@@ -37,9 +43,9 @@ const CadastroVeiculos = () => {
       } else {
         alert("Erro ao cadastrar veículo!");
       }
-    } catch (erro) {
-      console.error("Erro ao cadastrar:", erro);
-      alert("Erro de conexão com o servidor!");
+    } catch (error) {
+      console.error("Erro ao cadastrar veículo:", error);
+      alert("Erro ao cadastrar veículo. Verifique os dados e tente novamente.");
     }
   };
 
@@ -47,18 +53,26 @@ const CadastroVeiculos = () => {
     <div className="cadastro-container">
       <header className="header">
         <img src={logo} alt="Logo Detran" className="logo" />
-        <h1 className="title">Sistema de Multas Detran</h1>
+        <h1 className="titulo">Cadastro de Veículos</h1>
       </header>
 
       <div className="form-container">
         <h2>Cadastro de Veículos</h2>
 
         <form onSubmit={handleSubmit}>
+
           <input
             type="text"
             placeholder="Placa"
             value={placa}
             onChange={(e) => setPlaca(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Modelo"
+            value={modelo}
+            onChange={(e) => setModelo(e.target.value)}
             required
           />
           <input
@@ -69,10 +83,10 @@ const CadastroVeiculos = () => {
             required
           />
           <input
-            type="text"
-            placeholder="Modelo"
-            value={modelo}
-            onChange={(e) => setModelo(e.target.value)}
+            type="number"
+            placeholder="CPF"
+            value={motoristaId}
+            onChange={(e) => setMotoristaId(e.target.value)}
             required
           />
 

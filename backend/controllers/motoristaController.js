@@ -2,7 +2,7 @@
 const Motorista = require('../models/motoristaModel');
 
 //validação de formato de CPF
- function validarCPF(cpf) {
+function validarCPF(cpf) {
 
     const regexCPF = /^(?:\d{11}|\d{3}\.\d{3}\.\d{3}\-\d{2})$/;
     return regexCPF.test(cpf);
@@ -101,15 +101,15 @@ exports.getMotoristaByCPF = (req, res) => {
         });
     };
 
-      exports.getHighScoreMotoristaByCP(cpf, (err, results) => {
-            if (err) {
-                return res.status(500).json({ erro: "Erro ao buscar motorista" });
-            }
-            if (results.length === 0) {
-                return res.status(404).json({ erro: "Motorista não encontrado ou pontuação insuficiente" });
-            }
-            res.status(200).json(results[0]);
-        });
+    exports.getHighScoreMotoristaByCPF(cpf, (err, results) => {
+        if (err) {
+            return res.status(500).json({ erro: "Erro ao buscar motorista" });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ erro: "Motorista não encontrado ou pontuação insuficiente" });
+        }
+        res.status(200).json(results[0]);
+    });
 
 
 };

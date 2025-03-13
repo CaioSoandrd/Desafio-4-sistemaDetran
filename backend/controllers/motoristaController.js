@@ -101,7 +101,7 @@ exports.getMotoristaByCPF = (req, res) => {
         });
     };
 
-        Motorista.getHighScoreByCPF(cpf, (err, results) => {
+      exports.getHighScoreMotoristaByCP(cpf, (err, results) => {
             if (err) {
                 return res.status(500).json({ erro: "Erro ao buscar motorista" });
             }

@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:5001";
 
-export async function fecthData(endpoint) {
+export async function get(endpoint) {
     try {
         const response = await fetch(`${API_URL}/${endpoint}`);
         return await response.json();
@@ -10,7 +10,7 @@ export async function fecthData(endpoint) {
     }
 }
 
-export async function postData(endpoint, data) {
+export async function post(endpoint, data) {
     try {
         const response = await fetch(`${API_URL}/${endpoint}`, {
             method: "POST",
@@ -23,3 +23,5 @@ export async function postData(endpoint, data) {
         return null;
     }
 }
+
+export default { get, post };

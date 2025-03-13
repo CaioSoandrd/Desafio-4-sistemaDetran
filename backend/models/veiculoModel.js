@@ -3,11 +3,15 @@ const db = require('../config/mysql');
 // define o objeto Veiculo com os métodos de acesso ao banco
 const Veiculo = {
 
-    // cria um novo veículo na tabela 'veiculos'
+    //cria o veiculo
     create: (veiculo, callback) => {
         const query = "INSERT INTO veiculos (placa, modelo, cor, motorista_id) VALUES (?, ?, ?, ?)";
-        db.query(query, [veiculo.placa, veiculo.modelo, veiculo.cor, veiculo.motorista_id], callback);
-
+        db.query(query, [veiculo.placa, veiculo.modelo, veiculo.cor, veiculo.motorista_id], (err, result) => {
+            if (err) {
+                console.error("Erro no MySQL:", err); // Log detalhado do erro
+            }
+            callback(err, result);
+        });
     },
 
     // busca todos os veículos cadastrados
